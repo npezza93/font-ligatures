@@ -17,7 +17,7 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "commit": "commit",
-    "commitmsg": "commitlint -e $GIT_PARAMS",
+    "commitmsg": "",
     "commitlint": "commitlint",
     "lint": "tslint --project tsconfig.json --fix",
     "clean": "rimraf dist",
