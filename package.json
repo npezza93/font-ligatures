@@ -1,6 +1,6 @@
 {
-  "name": "font-ligatures",
-  "version": "1.4.1",
+  "name": "@npezza93/font-ligatures",
+  "version": "2.0.0",
   "description": "Find ligature replacements for any system font",
   "homepage": "https://github.com/princjef/font-ligatures#readme",
   "repository": {
@@ -10,8 +10,8 @@
   "bugs": {
     "url": "https://github.com/princjef/font-ligatures/issues"
   },
-  "engines": {
-    "node": ">8.0.0"
+  "publishConfig": {
+    "registry":"https://npm.pkg.github.com"
   },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -31,8 +31,7 @@
     "show-coverage": "opener ./coverage/index.html",
     "coverage": "nyc report --reporter=text-lcov > coverage.lcov",
     "prerelease": "npm run build",
-    "release": "semantic-release",
-    "bench": "node --expose-gc bench/all.js"
+    "release": "semantic-release"
   },
   "keywords": [
     "font",
@@ -43,7 +42,6 @@
   "author": "Jeff Principe <princjef@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "font-finder": "^1.0.3",
     "lru-cache": "^6.0.0",
     "opentype.js": "^0.8.0"
   },
@@ -56,7 +54,6 @@
     "@semantic-release/github": "^4.4.2",
     "@semantic-release/npm": "^3.4.1",
     "@types/lru-cache": "^5.1.0",
-    "@types/node": "^8.10.10",
     "@types/opentype.js": "^0.7.0",
     "@types/sinon": "^4.3.1",
     "ava": "^0.25.0",

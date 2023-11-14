@@ -246,38 +246,6 @@ class FontImpl implements Font {
 }
 
 /**
- * Load the font with the given name. The returned value can be used to find
- * ligatures for the font.
- *
- * @param name Font family name for the font to load
- */
-export async function load(name: string, options?: Options): Promise<Font> {
-    // We just grab the first font variant we find for now.
-    // TODO: allow users to specify information to pick a specific variant
-    const [fontInfo] = await import('font-finder').then(fontFinder => fontFinder.listVariants(name));
-
-    if (!fontInfo) {
-        throw new Error(`Font ${name} not found`);
-    }
-
-    return loadFile(fontInfo.path, options);
-}
-
-/**
- * Load the font at the given file path. The returned value can be used to find
- * ligatures for the font.
- *
- * @param path Path to the file containing the font
- */
-export async function loadFile(path: string, options?: Options): Promise<Font> {
-    const font = await import('util').then(util => util.promisify<string, opentype.Font | undefined>(opentype.load)(path));
-    return new FontImpl(font!, {
-        cacheSize: 0,
-        ...options
-    });
-}
-
-/**
  * Load the font from it's binary data. The returned value can be used to find
  * ligatures for the font.
  *
