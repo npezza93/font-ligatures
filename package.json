@@ -1,5 +1,5 @@
 {
-  "name": "@npezza93/font-ligatures",
+  "name": "npezza93-font-ligatures",
   "version": "2.0.3",
   "description": "Find ligature replacements for any system font",
   "homepage": "https://github.com/princjef/font-ligatures#readme",
